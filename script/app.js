@@ -18,8 +18,10 @@ const SearchButton =() => {
             // div.classList.add("");
             div.classList.add("col-4");
             div.innerHTML = `
-    
+                 
+         
             <div class="card text-center gx-5 m-3">
+         
                 <div class="card-body">
                 <img src="${phons.image}" class="card-img-top w-75" alt="...">
                 <p class="pb-0">Brand: ${phons.brand}</p>
@@ -29,6 +31,7 @@ const SearchButton =() => {
                     <a onclick="detalisBtn('${phons.slug}')" href="#" class=" button-phon">Details</a>
                 </div>
                 </div>
+          
                
             `;
             prentContanar.appendChild(div);
@@ -44,18 +47,29 @@ const SearchButton =() => {
     }
 
     const DetalisBox = (detalis) => {
-  
+               console.log(detalis);
       const DetalisId = document.getElementById('Detalis-Box');
       const div = document.createElement('div');
       div.innerHTML = `
-      <div class="card mb-3">
-  <img src="${detalis.image}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-  </div>
-</div>
+      <div class="" >
+      <div class="row d-flex justify-content-center g-0 p-3 ">
+        <div class="col-md-2">
+          <img src="${detalis.image}" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <h5 class="card-title mb-0"> ${detalis.brand}</h5>
+            <p class="card-text mb-0"><small class="text-muted "> <b> name:</b> ${detalis.name}</small></p>
+            <p class="card-text mb-0"><small class="text-muted"> <b>Display:</b> ${detalis.mainFeatures.displaySize}</small></p>
+
+            <p class="card-text mb-0"> <b> storage: </b><small class="text-muted"> ${detalis.mainFeatures.memory}</small></p>
+            <p class="card-text mb-0"> <b> ChipSet: </b><small class="text-muted"> ${detalis.mainFeatures.chipSet}</small></p>
+
+            <p class="card-text mb-0"><B> ReleaseDate:</B> ${detalis.releaseDate}<p>
+          </div>
+        </div>
+      </div>
+    </div>
       
       `;
       DetalisId.appendChild(div);
