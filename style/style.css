@@ -1,0 +1,19 @@
+.input-Cearch {
+    width: 80% !important;
+    margin: auto !important;
+}
+.input-Cearch button {
+    color: white !important;
+    background: #471b72 !important;
+}
+/* .card-box{
+ display: grid;
+    grid-template-columns: repeat(3, 1fr);
+} */
+.button-phon {
+    background-color: #1d6dff;
+    padding: 6px 84px;
+    border-radius: 15px;
+    color: white;
+    text-decoration: none;
+}
