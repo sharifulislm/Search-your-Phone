@@ -1,33 +1,34 @@
 .input-Cearch {
-    width: 80% !important;
-    margin: auto !important;
+	width: 80% !important;
+	margin: auto !important;
 }
 
 .input-Cearch button {
-    color: white !important;
-    background: #471b72 !important;
+	color: white !important;
+	background: #471b72 !important;
 }
 
-/* .card-box{
- display: grid;
-    grid-template-columns: repeat(3, 1fr);
-} */
+
 .button-phon {
-    background-color: #1d6dff;
-    padding: 6px 84px;
-    border-radius: 15px;
-    color: white;
-    text-decoration: none;
+	background-color: #1d6dff;
+	padding: 6px 84px;
+	border-radius: 15px;
+
+	text-decoration: none;
+	color: white !important;
+	font-weight: bolder;
+
 }
 
 #spinner-box {
-    display: none ;
-    /* display: block !important; */
-    color: #212529;
+	display: none;
+	/* display: block !important; */
+	color: #212529;
 }
+
 h2#error {
-    font-size: 25px;
-    font-family: math;
-    font-weight: initial;
-    color: #c0001b;
+	font-size: 25px;
+	font-family: math;
+	font-weight: initial;
+	color: #c0001b;
 }
