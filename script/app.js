@@ -10,25 +10,24 @@ const SearchButton = () => {
   const input = document.getElementById('search-box');
   const errer = document.getElementById("error");
   const searchInput = input.value
-  if(searchInput == ''){
+  if (searchInput == '') {
     // alert("Your search did not match any documents");
-    errer.innerText="your search did not match any documents";
-    input.value='';
-     // previous all phone shop content clear 
-    prentContanar.textContent='';
-     // previous Details content clear 
-    DetalisId.textContent='';
-  }
-  else{
-  
-    prentContanar.textContent='';
+    errer.innerText = "your search did not match any documents";
+    input.value = '';
+    // previous all phone shop content clear 
+    prentContanar.textContent = '';
+    // previous Details content clear 
+    DetalisId.textContent = '';
+  } else {
+
+    prentContanar.textContent = '';
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchInput}`;
     fetch(url)
       .then(res => res.json())
       .then(data => showphon(data.data));
 
     errer.innerText = '';
-    input.value='';
+    input.value = '';
 
   }
 
@@ -40,13 +39,10 @@ const SearchButton = () => {
 }
 // main function 
 const showphon = (phon) => {
-  if (phon.length >= 2000){
- alert("Your search did not match any 1110");
-  }
-  else{
-  
-  for (const phons of phon) {
-    // console.log(phons.length);
+
+
+  for (const phons of phon.slice(0, 20)) {
+    console.log(phons);
     const prentContanar = document.getElementById('prent-contanar');
     // prentContanar.textContent='';
     const div = document.createElement('div');
@@ -74,12 +70,12 @@ const showphon = (phon) => {
 
 
   }
-}
+
 }
 // Detalis button function
 const detalisBtn = (Details) => {
   // previous Details content clear 
-  DetalisId.textContent='';
+  DetalisId.textContent = '';
 
   const url = `https://openapi.programming-hero.com/api/phone/${Details}`;
   fetch(url)
@@ -90,7 +86,7 @@ const detalisBtn = (Details) => {
 // main detalish function
 const DetalisBox = (detalis) => {
 
- 
+
 
   console.log(detalis);
   const DetalisId = document.getElementById('Detalis-Box');
@@ -124,7 +120,7 @@ const DetalisBox = (detalis) => {
       `;
   DetalisId.appendChild(div);
 
- 
+
   // prentContanar.textContent='';
 
 
