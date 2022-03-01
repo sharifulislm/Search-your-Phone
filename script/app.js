@@ -112,8 +112,7 @@ const DetalisBox = (detalis) => {
             <p class="card-text mb-0"><small class="text-muted"> <b>storage:</b> ${detalis.mainFeatures.memory}</small></p>
             <p class="card-text mb-0"><small class="text-muted"> <b>ChipSet:</b> ${detalis.mainFeatures.chipSet}</small></p>
             <p class="card-text mb-0"><small class="text-muted"> <b>ReleaseDate:</b> ${detalis.releaseDate}</small></p>
-            <p class="card-text mb-0"><small class="text-muted"> <b>GPS:</b> ${detalis.others.GPS}</small></p>
-            <p class="card-text mb-0"><small class="text-muted"> <b>Sensors:</b> 1: ${detalis.mainFeatures.sensors[0]} 2: ${detalis.mainFeatures.sensors[1]} 3: ${detalis.mainFeatures.sensors[2]} 4: ${detalis.mainFeatures.sensors[3]} ${detalis.mainFeatures.sensors[4]} </small></p>
+          <p class="card-text mb-0"><small class="text-muted"> <b>Sensors:</b> 1: ${detalis.mainFeatures.sensors[0]} 2: ${detalis.mainFeatures.sensors[1]} 3: ${detalis.mainFeatures.sensors[2]} 4: ${detalis.mainFeatures.sensors[3]} ${detalis.mainFeatures.sensors[4]} </small></p>
            
 
           </div>
