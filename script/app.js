@@ -20,7 +20,7 @@ const SearchButton =() => {
             div.innerHTML = `
                  
          
-            <div class="card text-center gx-5 m-3">
+            <div class="card cards-border text-center gx-5 m-3">
          
                 <div class="card-body">
                 <img src="${phons.image}" class="card-img-top w-75" alt="...">
@@ -28,7 +28,7 @@ const SearchButton =() => {
                 <h5 class="card-title pb-1">${phons.phone_name}</h5>
               
              
-                    <a onclick="detalisBtn('${phons.slug}')" href="#" class=" button-phon">Details</a>
+                    <button onclick="detalisBtn('${phons.slug}')" href="#" class=" btn-primary button-phon">Details</button>
                 </div>
                 </div>
           
@@ -61,11 +61,16 @@ const SearchButton =() => {
             <h5 class="card-title mb-0"> ${detalis.brand}</h5>
             <p class="card-text mb-0"><small class="text-muted "> <b> name:</b> ${detalis.name}</small></p>
             <p class="card-text mb-0"><small class="text-muted"> <b>Display:</b> ${detalis.mainFeatures.displaySize}</small></p>
+            <p class="card-text mb-0"><small class="text-muted"> <b>storage:</b> ${detalis.mainFeatures.memory}</small></p>
+            <p class="card-text mb-0"><small class="text-muted"> <b>ChipSet:</b> ${detalis.mainFeatures.chipSet}</small></p>
+            <p class="card-text mb-0"><small class="text-muted"> <b>ReleaseDate:</b> ${detalis.releaseDate}</small></p>
+            <p class="card-text mb-0"><small class="text-muted"> <b>Bluetooth:</b> ${detalis.others.Bluetooth}</small></p>
+            <p class="card-text mb-0"><small class="text-muted"> <b>USB:</b> ${detalis.others.USB}</small></p>
+           
 
-            <p class="card-text mb-0"> <b> storage: </b><small class="text-muted"> ${detalis.mainFeatures.memory}</small></p>
-            <p class="card-text mb-0"> <b> ChipSet: </b><small class="text-muted"> ${detalis.mainFeatures.chipSet}</small></p>
+        
 
-            <p class="card-text mb-0"><B> ReleaseDate:</B> ${detalis.releaseDate}<p>
+
           </div>
         </div>
       </div>
