@@ -21,7 +21,7 @@
 }
 
 #spinner-box {
-    display: none !important;
+    display: none ;
     /* display: block !important; */
     color: #212529;
 }

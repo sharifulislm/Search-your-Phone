@@ -5,20 +5,29 @@ const DetalisId = document.getElementById('Detalis-Box');
 
 // main section ar id 
 const main = document.getElementById('main');
+
+// togglwspinner function
+const toggleSpinner = displaystyle => {
+  document.getElementById('spinner-box').style.display = displaystyle;
+}
+
 // button onclick start 
 const SearchButton = () => {
+  
   const input = document.getElementById('search-box');
   const errer = document.getElementById("error");
   const searchInput = input.value
+  // togglwspinner function on
+  toggleSpinner('block');
   if (searchInput == '') {
     errer.innerText = `❌ please enter a something  valuable...`;
     input.value = '';
+    toggleSpinner('none');
     // previous all phone shop content clear 
     prentContanar.textContent = '';
     // previous Details content clear 
     DetalisId.textContent = '';
   } else {
-
     prentContanar.textContent = '';
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchInput}`;
     fetch(url)
@@ -30,18 +39,17 @@ const SearchButton = () => {
 
   }
 
-
-
-
-
-
 }
+
+
+
 // main function 
 const showphon = (phon) => {
 
 
   for (const phons of phon.slice(0, 20)) {
     console.log(phons);
+
     const prentContanar = document.getElementById('prent-contanar');
     // prentContanar.textContent='';
     const div = document.createElement('div');
@@ -69,13 +77,16 @@ const showphon = (phon) => {
 
 
   }
+  // togglwspinner function off
+  toggleSpinner('none');
 
 }
 // Detalis button function
 const detalisBtn = (Details) => {
   // previous Details content clear 
   DetalisId.textContent = '';
-
+  // togglwspiner function on 
+  toggleSpinner('block');
   const url = `https://openapi.programming-hero.com/api/phone/${Details}`;
   fetch(url)
     .then(res => res.json())
@@ -120,7 +131,7 @@ const DetalisBox = (detalis) => {
   DetalisId.appendChild(div);
 
 
-  // prentContanar.textContent='';
+toggleSpinner('none');
 
 
 }
