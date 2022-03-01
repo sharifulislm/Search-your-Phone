@@ -11,8 +11,7 @@ const SearchButton = () => {
   const errer = document.getElementById("error");
   const searchInput = input.value
   if (searchInput == '') {
-    // alert("Your search did not match any documents");
-    errer.innerText = "your search did not match any documents";
+    errer.innerText = `❌ please enter a something  valuable...`;
     input.value = '';
     // previous all phone shop content clear 
     prentContanar.textContent = '';

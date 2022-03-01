@@ -25,3 +25,9 @@
     /* display: block !important; */
     color: #212529;
 }
+h2#error {
+    font-size: 25px;
+    font-family: math;
+    font-weight: initial;
+    color: #c0001b;
+}
