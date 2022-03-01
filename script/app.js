@@ -1,4 +1,4 @@
-// phon shop id 
+// phon shop prent id 
 const prentContanar = document.getElementById('prent-contanar');
 // detalis box id 
 const DetalisId = document.getElementById('Detalis-Box');
@@ -42,8 +42,6 @@ const SearchButton = () => {
 
 }
 
-
-
 // main function 
 const showphon = (phon) => {
 
@@ -60,20 +58,18 @@ const showphon = (phon) => {
 		div.innerHTML = `
                  
          
-            <div class="card text-center ">
-         
-                <div class="card-body">
-                <img src="${phons.image}" class="card-img-top w-75" alt="...">
-                <p class="pb-0">Brand: ${phons.brand}</p>
-                <h5 class="card-title pb-1">${phons.phone_name}</h5>
-              
-             
-                    <button onclick="detalisBtn('${phons.slug}')" href="#" class=" btn-primary button-phon">Details</button>
-                </div>
-                </div>
-          
-               
-            `;
+				<div class="card text-center ">
+			
+					<div class="card-body">
+					<img src="${phons.image}" class="card-img-top w-75" alt="...">
+					<p class="pb-0">Brand: ${phons.brand}</p>
+					<h5 class="card-title pb-1">${phons.phone_name}</h5>
+				
+				
+					<button onclick="detalisBtn('${phons.slug}')" href="#" class=" btn-primary button-phon">Details</button>
+					</div>
+					</div>
+			`;
 		prentContanar.appendChild(div);
 
 
@@ -119,9 +115,6 @@ const DetalisBox = (detalis) => {
             <p class="card-text mb-0"><small class="text-muted"> <b>GPS:</b> ${detalis.others.GPS}</small></p>
             <p class="card-text mb-0"><small class="text-muted"> <b>Sensors:</b> 1: ${detalis.mainFeatures.sensors[0]} 2: ${detalis.mainFeatures.sensors[1]} 3: ${detalis.mainFeatures.sensors[2]} 4: ${detalis.mainFeatures.sensors[3]} ${detalis.mainFeatures.sensors[4]} </small></p>
            
-
-        
-
 
           </div>
         </div>
