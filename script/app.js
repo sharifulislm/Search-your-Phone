@@ -1,26 +1,62 @@
-const SearchButton =() => {
-    const searchInput = document.getElementById('search-box').value;
-    
-    
+// phon shop id 
+const prentContanar = document.getElementById('prent-contanar');
+// detalis box id 
+const DetalisId = document.getElementById('Detalis-Box');
+
+// main section ar id 
+const main = document.getElementById('main');
+// button onclick start 
+const SearchButton = () => {
+  const input = document.getElementById('search-box');
+  const errer = document.getElementById("error");
+  const searchInput = input.value
+  if(searchInput == ''){
+    // alert("Your search did not match any documents");
+    errer.innerText="your search did not match any documents";
+    input.value='';
+     // previous all phone shop content clear 
+    prentContanar.textContent='';
+     // previous Details content clear 
+    DetalisId.textContent='';
+  }
+  else{
+  
+    prentContanar.textContent='';
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchInput}`;
-    fetch (url)
-    .then(res => res.json())
-    .then(data => showphon(data.data));
-    
-    
-    }
-    const showphon = (phon) => {
-        for (const phons of phon) {
-            console.log(phons);
-            const prentContanar= document.getElementById('prent-contanar');
-            const div = document.createElement('div');
-            
-            // div.classList.add("");
-            div.classList.add("col-4");
-            div.innerHTML = `
+    fetch(url)
+      .then(res => res.json())
+      .then(data => showphon(data.data));
+
+    errer.innerText = '';
+    input.value='';
+
+  }
+
+
+
+
+
+
+}
+// main function 
+const showphon = (phon) => {
+  if (phon.length >= 2000){
+ alert("Your search did not match any 1110");
+  }
+  else{
+  
+  for (const phons of phon) {
+    // console.log(phons.length);
+    const prentContanar = document.getElementById('prent-contanar');
+    // prentContanar.textContent='';
+    const div = document.createElement('div');
+
+    // div.classList.add("");
+    div.classList.add("col-4");
+    div.innerHTML = `
                  
          
-            <div class="card cards-border text-center gx-5 m-3">
+            <div class="card text-center gx-5 m-3">
          
                 <div class="card-body">
                 <img src="${phons.image}" class="card-img-top w-75" alt="...">
@@ -34,23 +70,32 @@ const SearchButton =() => {
           
                
             `;
-            prentContanar.appendChild(div);
-          
-        }
-    }
-    const detalisBtn = (Details) => {
-        console.log();
-        const url = `https://openapi.programming-hero.com/api/phone/${Details}`;
-        fetch (url)
-        .then(res => res.json())
-        .then(Deta => DetalisBox(Deta.data));
-    }
+    prentContanar.appendChild(div);
 
-    const DetalisBox = (detalis) => {
-               console.log(detalis);
-      const DetalisId = document.getElementById('Detalis-Box');
-      const div = document.createElement('div');
-      div.innerHTML = `
+
+  }
+}
+}
+// Detalis button function
+const detalisBtn = (Details) => {
+  // previous Details content clear 
+  DetalisId.textContent='';
+
+  const url = `https://openapi.programming-hero.com/api/phone/${Details}`;
+  fetch(url)
+    .then(res => res.json())
+    .then(Deta => DetalisBox(Deta.data));
+}
+
+// main detalish function
+const DetalisBox = (detalis) => {
+
+ 
+
+  console.log(detalis);
+  const DetalisId = document.getElementById('Detalis-Box');
+  const div = document.createElement('div');
+  div.innerHTML = `
       <div class="" >
       <div class="row d-flex justify-content-center g-0 p-3 ">
         <div class="col-md-2">
@@ -64,8 +109,8 @@ const SearchButton =() => {
             <p class="card-text mb-0"><small class="text-muted"> <b>storage:</b> ${detalis.mainFeatures.memory}</small></p>
             <p class="card-text mb-0"><small class="text-muted"> <b>ChipSet:</b> ${detalis.mainFeatures.chipSet}</small></p>
             <p class="card-text mb-0"><small class="text-muted"> <b>ReleaseDate:</b> ${detalis.releaseDate}</small></p>
-            <p class="card-text mb-0"><small class="text-muted"> <b>Bluetooth:</b> ${detalis.others.Bluetooth}</small></p>
             <p class="card-text mb-0"><small class="text-muted"> <b>USB:</b> ${detalis.others.USB}</small></p>
+            <p class="card-text mb-0"><small class="text-muted"> <b>Sensors:</b> 1: ${detalis.mainFeatures.sensors[0]} 2: ${detalis.mainFeatures.sensors[1]} 3: ${detalis.mainFeatures.sensors[2]} 4: ${detalis.mainFeatures.sensors[3]} ${detalis.mainFeatures.sensors[4]} </small></p>
            
 
         
@@ -77,7 +122,10 @@ const SearchButton =() => {
     </div>
       
       `;
-      DetalisId.appendChild(div);
+  DetalisId.appendChild(div);
 
-     
-    }
+ 
+  // prentContanar.textContent='';
+
+
+}

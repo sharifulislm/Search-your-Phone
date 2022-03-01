@@ -2,10 +2,12 @@
     width: 80% !important;
     margin: auto !important;
 }
+
 .input-Cearch button {
     color: white !important;
     background: #471b72 !important;
 }
+
 /* .card-box{
  display: grid;
     grid-template-columns: repeat(3, 1fr);
