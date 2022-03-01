@@ -19,3 +19,8 @@
     color: white;
     text-decoration: none;
 }
+#spinner-box{
+    display: none !important;
+    /* display: block !important; */
+    color: #212529;
+}

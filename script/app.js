@@ -52,11 +52,11 @@ const showphon = (phon) => {
     const div = document.createElement('div');
 
     // div.classList.add("");
-    div.classList.add("col-4");
+    div.classList.add("col");
     div.innerHTML = `
                  
          
-            <div class="card text-center gx-5 m-3">
+            <div class="card text-center ">
          
                 <div class="card-body">
                 <img src="${phons.image}" class="card-img-top w-75" alt="...">
