@@ -66,7 +66,7 @@ const showphon = (phon) => {
 					<h5 class="card-title pb-1">${phons.phone_name}</h5>
 				
 				
-					<button onclick="detalisBtn('${phons.slug}')" href="#" class=" btn-primary button-phon">Details</button>
+					<button onclick="detalisBtn('${phons.slug}')" href="#search-box" class=" btn-primary button-phon">Details</button>
 					</div>
 					</div>
 			`;
@@ -111,6 +111,8 @@ const DetalisBox = (detalis) => {
             <p class="card-text mb-0"><small class="text-muted"> <b>Display:</b> ${detalis.mainFeatures.displaySize}</small></p>
             <p class="card-text mb-0"><small class="text-muted"> <b>storage:</b> ${detalis.mainFeatures.memory}</small></p>
             <p class="card-text mb-0"><small class="text-muted"> <b>ChipSet:</b> ${detalis.mainFeatures.chipSet}</small></p>
+            <p class="card-text mb-0"><small class="text-muted"> <b>GPS:</b> ${detalis?.others?.GPS} <b>NFC:</b> ${detalis?.others?.NFC} <b>Radio:</b> ${detalis?.others?.Radio}</small></p>
+            <p class="card-text mb-0"><small class="text-muted"> <b>USB:</b> ${detalis?.others?.USB} <b>WLAN:</b> ${detalis?.others?.WLAN} </small></p>
             <p class="card-text mb-0"><small class="text-muted"> <b>ReleaseDate:</b> ${detalis.releaseDate}</small></p>
           <p class="card-text mb-0"><small class="text-muted"> <b>Sensors:</b> 1: ${detalis.mainFeatures.sensors[0]} 2: ${detalis.mainFeatures.sensors[1]} 3: ${detalis.mainFeatures.sensors[2]} 4: ${detalis.mainFeatures.sensors[3]} ${detalis.mainFeatures.sensors[4]} </small></p>
            
@@ -120,13 +122,16 @@ const DetalisBox = (detalis) => {
       </div>
     </div>
   
-      
       `;
 
 	DetalisId.appendChild(div);
 
 
 	toggleSpinner('none');
+
+
+
+
 	// previous all phone shop content clear 
 	// prentContanar.textContent = '';
 
